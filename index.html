@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rohit Chatterjee's Ultimate Interview Guide - Audio Interactive Learning</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Welcome Screen -->
+    <div id="welcome-screen" class="welcome-screen">
+        <div class="welcome-content">
+            <h1>The Ultimate Interview Guide</h1>
+            <h2>AI Automation & Backend Engineering</h2>
+            <div class="subtitle">300+ Q&As with Integrated Audio Learning</div>
+            <div class="tutorial-overview">
+                <p class="duration">Total Duration: <strong>62 minutes</strong></p>
+                <p class="description">Master interview preparation with text-to-speech enabled learning experience</p>
+                <div class="overview-stats">
+                    <div class="stat">
+                        <div class="stat-number">15</div>
+                        <div class="stat-label">Sections</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">300+</div>
+                        <div class="stat-label">Questions</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">🎧</div>
+                        <div class="stat-label">Audio Enabled</div>
+                    </div>
+                </div>
+                <div class="audio-support-check" id="audio-support">
+                    <div class="support-indicator" id="tts-support">
+                        <span class="status-icon">⏳</span>
+                        <span class="status-text">Checking audio support...</span>
+                    </div>
+                </div>
+            </div>
+            <button class="btn btn--primary btn--lg start-tutorial-btn" id="start-tutorial">
+                🎧 Start Audio Learning
+            </button>
+        </div>
+    </div>
+
+    <!-- Main Tutorial Interface -->
+    <div id="tutorial-interface" class="tutorial-interface hidden">
+        <!-- Header -->
+        <header class="tutorial-header">
+            <h1>Interview Guide - Audio Learning</h1>
+            <div class="tutorial-stats">
+                <span id="current-section">Section 1</span>
+                <span class="separator">•</span>
+                <span id="progress-text">0 of 15 sections</span>
+                <span class="separator">•</span>
+                <span class="audio-status" id="audio-status">Ready</span>
+            </div>
+        </header>
+
+        <!-- Audio Control Panel -->
+        <div class="audio-control-panel" id="audio-panel">
+            <div class="audio-controls-main">
+                <button class="audio-btn audio-btn--primary" id="audio-play-pause" title="Play/Pause (Spacebar)">
+                    <span class="btn-icon">▶️</span>
+                    <span class="btn-text">Play</span>
+                </button>
+                <button class="audio-btn" id="audio-stop" title="Stop">
+                    <span class="btn-icon">⏹️</span>
+                </button>
+                <button class="audio-btn" id="audio-prev" title="Previous Section">
+                    <span class="btn-icon">⏮️</span>
+                </button>
+                <button class="audio-btn" id="audio-next" title="Next Section">
+                    <span class="btn-icon">⏭️</span>
+                </button>
+            </div>
+            
+            <div class="audio-controls-settings">
+                <div class="speed-control">
+                    <label for="audio-speed">Speed:</label>
+                    <select id="audio-speed" class="form-control">
+                        <option value="0.5">0.5x</option>
+                        <option value="0.75">0.75x</option>
+                        <option value="1" selected>1x</option>
+                        <option value="1.25">1.25x</option>
+                        <option value="1.5">1.5x</option>
+                        <option value="2">2x</option>
+                    </select>
+                </div>
+                
+                <div class="voice-control">
+                    <label for="voice-select">Voice:</label>
+                    <select id="voice-select" class="form-control">
+                        <option value="">Default</option>
+                    </select>
+                </div>
+                
+                <div class="reading-mode">
+                    <label for="reading-mode">Mode:</label>
+                    <select id="reading-mode" class="form-control">
+                        <option value="continuous">Continuous</option>
+                        <option value="section">Section Only</option>
+                        <option value="manual">Manual Control</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Content Area -->
+        <div class="tutorial-main">
+            <!-- Sidebar -->
+            <aside class="tutorial-sidebar">
+                <div class="sidebar-header">
+                    <h3>Learning Sections</h3>
+                    <div class="search-container">
+                        <input type="text" id="section-search" class="form-control" placeholder="Search sections...">
+                    </div>
+                </div>
+                <div class="sections-list" id="sections-list">
+                    <!-- Sections will be populated by JavaScript -->
+                </div>
+                <div class="study-progress">
+                    <h4>Study Progress</h4>
+                    <div class="progress-stats">
+                        <div class="progress-item">
+                            <span>Completed:</span>
+                            <span id="completed-count">0</span>
+                        </div>
+                        <div class="progress-item">
+                            <span>Time Spent:</span>
+                            <span id="time-spent">0 min</span>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+
+            <!-- Content Area -->
+            <div class="tutorial-content">
+                <!-- Content Display -->
+                <div class="content-display" id="content-display">
+                    <div class="section-header">
+                        <h2 id="section-title">Career Summary & Experience Highlights</h2>
+                        <div class="section-meta">
+                            <span class="section-number">Section 1 of 15</span>
+                            <button class="bookmark-btn" id="bookmark-btn" title="Bookmark this section">
+                                <span class="bookmark-icon">🔖</span>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="reading-content" id="reading-content">
+                        <div class="content-text" id="content-text">
+                            <p>Loading content...</p>
+                        </div>
+                        
+                        <div class="subsections" id="subsections">
+                            <!-- Subsections will be populated -->
+                        </div>
+                        
+                        <div class="key-points" id="key-points">
+                            <!-- Key points will be populated -->
+                        </div>
+                    </div>
+                    
+                    <!-- Reading Progress Indicator -->
+                    <div class="reading-progress" id="reading-progress">
+                        <div class="progress-bar">
+                            <div class="progress-fill" id="reading-progress-fill"></div>
+                        </div>
+                        <div class="progress-text">
+                            <span id="current-sentence">Sentence 1</span> of <span id="total-sentences">0</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Navigation Controls -->
+                <div class="navigation-controls">
+                    <button class="btn btn--outline" id="prev-section" disabled>
+                        ← Previous Section
+                    </button>
+                    <button class="btn btn--primary" id="next-section">
+                        Next Section →
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Audio Visualization -->
+        <div class="audio-visualization" id="audio-visualization">
+            <div class="speaking-indicator" id="speaking-indicator">
+                <div class="wave-bar"></div>
+                <div class="wave-bar"></div>
+                <div class="wave-bar"></div>
+                <div class="wave-bar"></div>
+                <div class="wave-bar"></div>
+            </div>
+            <div class="current-reading" id="current-reading">
+                <span class="reading-text">Ready to start reading...</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Completion Screen -->
+    <div id="completion-screen" class="completion-screen hidden">
+        <div class="completion-content">
+            <h1>🎉 Interview Preparation Complete!</h1>
+            <h2>You've mastered all 15 sections with audio learning</h2>
+            <div class="completion-stats">
+                <div class="stat">
+                    <div class="stat-number">15</div>
+                    <div class="stat-label">Sections Completed</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number" id="final-time-spent">62</div>
+                    <div class="stat-label">Minutes Learned</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">300+</div>
+                    <div class="stat-label">Questions Covered</div>
+                </div>
+            </div>
+            <div class="key-takeaways">
+                <h3>Key Learning Points</h3>
+                <ul id="takeaways-list">
+                    <!-- Takeaways will be populated -->
+                </ul>
+            </div>
+            <div class="completion-actions">
+                <button class="btn btn--primary" id="restart-tutorial">🔄 Start Over</button>
+                <button class="btn btn--secondary" id="review-bookmarks">📚 Review Bookmarks</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Accessibility Announcements -->
+    <div class="sr-only" id="audio-announcements" aria-live="polite" aria-atomic="true"></div>
+
+    <script src="app.js"></script>
+</body>
+</html>
